@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGTSB</title>
+    <style>
+        body{
+            font-family: 'Brush Script MT', cursive;
+            background-color: #ccc;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .contact-form {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+        .contact-form h2 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 98%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 16px;
+            text-align: center;
+        }
+        .contact-form button {
+            background: #000;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 16px;
+        }
+        .contact-form button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <input type="text" id="name" name="name" placeholder="Name" required>
+            <input type="email" id="email" name="email" placeholder="Email Address" required>
+            <input type="tel" id="phone" name="phone" placeholder="Phone Number (Optional)">
+            <textarea id="message" name="message" placeholder="Email Content" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+
+            const emailContent = `From: ${email}\nPhone: ${phone}\n\n${message}`;
+
+            const mailtoLink = `mailto:coloradoGTSB@gmail.com?subject=${name}&body=${encodeURIComponent(emailContent)}`;
+
+            window.location.href = mailtoLink;
+        });
+    </script>
+</body>
+</html>
