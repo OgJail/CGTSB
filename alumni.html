@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CTGSB - Alumni</title>
+    <meta name="description" content="Colorado GT Student Board Alumni">
+    <meta name="keywords" content="CTGSB, Alumni, Colorado, GT, Student Board, Education">
+
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="alumni.css">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Leaflet JS -->
+    <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+    <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="wrapper">
+            <div class="logo"><a href="index.html">CTGSB</a></div>
+            <input type="radio" name="slider" id="menu-btn">
+            <input type="radio" name="slider" id="close-btn">
+            <ul class="nav-links">
+                <label for="close-btn" class="btn close-btn" aria-label="Close Menu"><i class="fas fa-times"></i></label>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" class="active">Alumni</a></li>
+                <li><a href="#">Application</a></li>
+                <li class="desktop-item"><a href="#">Past Work</a>
+                    <input type="checkbox" id="showDrop">
+                    <label for="showDrop" class="mobile-item">Past Work</label>
+                    <ul class="drop-menu">
+                        <li><a href="#">ESSU 2024</a></li>
+                        <li><a href="#">CASB 2024</a></li>
+                        <li><a href="#">CASB 2023</a></li>
+                        <li><a href="#">CASB 2022</a></li>
+                        <li><a href="#">CAGT 2022</a></li>
+                        <li><a href="#">CASB 2019</a></li>
+                        <li><a href="#">CASH 2019</a></li>
+                    </ul>
+                </li>
+                <li class="desktop-item"><a href="#">Extra Resources</a>
+                    <input type="checkbox" id="showMega">
+                    <label for="showMega" class="mobile-item">Extra Resources</label>
+                    <div class="mega-box">
+                        <div class="content">
+                            <div class="row">
+                                <img src="CGTSBLogo.PNG" alt="CTGSB Logo">
+                            </div>
+                            <div class="row">
+                                <header>Our Board!</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Executive Team</a></li>
+                                    <li><a href="#">General Board</a></li>
+                                    <li><a href="#">Our Policies</a></li>
+                                    <li><a href="#">Mission & Values</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>GT Enrichment</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Scholarships</a></li>
+                                    <li><a href="#">Online Classes</a></li>
+                                    <li><a href="#">Volunteering</a></li>
+                                    <li><a href="#">Opportunities Treasure Trove</a></li>
+                                </ul>
+                            </div>
+                            <div class="row">
+                                <header>CTGSB Resources!</header>
+                                <ul class="mega-links">
+                                    <li><a href="#">Calendar</a></li>
+                                    <li><a href="#">Spotlight</a></li>
+                                    <li><a href="#">Contact Web Admin</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <label for="menu-btn" class="btn menu-btn" aria-label="Open Menu"><i class="fas fa-bars"></i></label>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">  
+        <h2 class = "section-title">Our Esteemed Alumni</h2>
+        <div class="carousel-container">
+            <div class="carousel-track-container">
+              <ul class="carousel-track">
+                <li class="carousel-slide">
+                  <img src="CGTSBLogo.PNG" alt="A1" />
+                  <h3>Person 1</h3>
+                  <p>"CGTSB is pog"</p>
+                  <button onclick="showProfile('Alumni 1', 'Biography', 'video1.mp4')">Learn More</button>
+                </li>
+                <li class="carousel-slide">
+                  <img src="CGTSBLogo.PNG" alt="A2" >
+                  <h3>Person 2</h3>
+                  <p>"CGTSB is pog"</p>
+                  <button onclick="showProfile('Alumni 2', 'Biography', 'video2.mp4')">Learn More</button>
+                </li>
+                <li class="carousel-slide">
+                    <img src="CGTSBLogo.PNG" alt="A3" >
+                    <h3>Person 3</h3>
+                    <p>"CGTSB is pog"</p>
+                    <button onclick="showProfile('Alumni 3', 'Biography', 'video2.mp4')">Learn More</button>
+                  </li>
+              </ul>
+            </div>
+          
+            <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+            <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+          </div>
+        <!-- Modal Structure -->
+        <div id="profileModal" class="modal" aria-hidden="true" role="dialog">
+            <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            <h2 id="profileName" class="modal-title"></h2>
+            <p id="profileBio" class="modal-description"></p>
+            
+            <div class="video-container">
+                <video id="profileVideo" controls aria-label="Alumni Video">
+                <source id="videoSource" src="" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="modal-footer">
+                <button onclick="pauseVideo()" class="secondary-btn">Pause Video</button>
+                <button class="primary-btn" onclick="closeModal()">Close</button>
+            </div>
+            </div>
+        </div>
+        <h2 class = "section-title">Where our Alumni Are</h2>
+        <section id = "map-stuff">
+        <div id = "map" style = "width: 800px; height: 400px"></div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 CTGSB. All rights reserved.</p>
+        <div class="social-media">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+    <script src="alumni.js"></script>
+</body>
+</html>

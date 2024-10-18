@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Leaflet sample</title>
+      <link rel = "stylesheet" href = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+      <script src = "http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+   </head>
+
+   <body>
+      <div id = "map" style = "width: 800px; height: 400px"></div>
+      <script>
+         // Creating map options
+         var mapOptions = {
+            center: [38.7964, -95.5348],
+            zoom: 4,
+            minZoom: 4,
+            maxZoom: 4,
+            dragging: false, 
+            scrollWheelZoom: false, 
+            doubleClickZoom: false, 
+            boxZoom: false, 
+            tap: false, 
+            touchZoom: false, 
+            keyboard: false, 
+            attributionControl: false, 
+            zoomControl: false
+         }
+         
+         // Creating a map object
+         var map = new L.map('map', mapOptions);
+         
+         // Creating a Layer object
+         var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+         
+         // Adding layer to the map
+         map.addLayer(layer);
+
+         //Icon Options 
+         var iconOptions = {
+            iconUrl: "CGTSBLogo.png",
+            iconSize: [10,10]
+         }
+
+         //Creating custom icon 
+         var customIcon = L.icon(iconOptions);
+
+         //Creating Marker Options
+         var markerOptions = {
+            title: "Test",
+            clickable: true, 
+            draggale: true, 
+            icon: customIcon
+         }
+
+         //Creating a marker 
+         var CUBoulder = new L.Marker([40.0150, -105.2705], markerOptions);
+         var GeorgiaTech = new L.Marker([33.7756, -84.3963], markerOptions);
+         var Cornell = new L.Marker([42.4534, -76.4735], markerOptions);
+         var SantaCalara = new L.Marker([37.3489, -121.9368], markerOptions);
+         var ColoradoCollege = new L.Marker([38.8492, -104.8254], markerOptions);
+         var UnionCollege = new L.Marker([42.8179, -73.9294], markerOptions);
+         var HarveyMudd = new L.Marker([34.1061, -117.7086], markerOptions);
+         var PennState = new L.Marker([40.7982, -77.8599], markerOptions);
+         var URochester = new L.Marker([43.1306, -77.6260], markerOptions);
+         var UNCChapelHill = new L.Marker([35.9049, -79.0469], markerOptions);
+         var GWU = new L.Marker([38.899588341695285, -77.0484561264256], markerOptions);
+         var WashUStLouis = new L.Marker([38.6488, -90.3108], markerOptions);
+         var Yale = new L.Marker([41.3163, -72.9223], markerOptions);
+
+         //Adding Marker to map & Binding Marker
+         CUBoulder.bindPopup("CU Boulder").openPopup();
+         CUBoulder.addTo(map); 
+         GeorgiaTech.bindPopup("Georgia Tech").openPopup();
+         GeorgiaTech.addTo(map);
+         Cornell.bindPopup("Cornell").openPopup();
+         Cornell.addTo(map);
+         SantaCalara.bindPopup("Santa Calara").openPopup();
+         SantaCalara.addTo(map);
+         ColoradoCollege.bindPopup("Colorado College").openPopup();
+         ColoradoCollege.addTo(map);
+         UnionCollege.bindPopup("Union College").openPopup();
+         UnionCollege.addTo(map);
+         HarveyMudd.bindPopup("Harvey Mudd").openPopup();
+         HarveyMudd.addTo(map);
+         PennState.bindPopup("Penn State").openPopup();
+         PennState.addTo(map);
+         URochester.bindPopup("University Of Rochester").openPopup();
+         URochester.addTo(map);
+         UNCChapelHill.bindPopup("UNC Chapel Hill").openPopup();
+         UNCChapelHill.addTo(map);
+         GWU.bindPopup("George Washington University").openPopup();
+         GWU.addTo(map);
+         WashUStLouis.bindPopup("Washington University in St. Louis").openPopup();
+         WashUStLouis.addTo(map);
+         Yale.bindPopup("Yale").openPopup();
+         Yale.addTo(map);
+      </script>
+   </body>
+   
+</html>

@@ -1,0 +1,153 @@
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    transform: translateY(100px);
+  }
+  
+  .carousel-track-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-track {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .carousel-slide {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .carousel-slide img {
+    width: 250px;
+    border-radius: 15px;
+  }
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    transform: translateY(-50%);
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  /* Modal Container Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
+  
+/* Modal Open Animation */
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+  
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+    animation: scaleUp 0.3s ease-in-out;
+}
+  
+/* Scale-Up Animation */
+@keyframes scaleUp {
+from {
+    transform: scale(0.9);
+    opacity: 0;
+}
+to {
+    transform: scale(1);
+    opacity: 1;
+}
+}
+  
+/* Close Button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+  
+/* Footer Buttons */
+.primary-btn, .secondary-btn {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.primary-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.secondary-btn {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+  }
+  
+input {
+padding: 8px;
+width: 30%;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+
+#map-stuff{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin: 20px 0;
+    font-size: 24px;
+    color: #333;
+    padding-top: 125px;
+}
